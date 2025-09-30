@@ -1,11 +1,9 @@
 import java.util.PriorityQueue;
 import java.util.Scanner;
-
-// Patient class
 class Patient implements Comparable<Patient> {
     private String name;
     private int severity;
-    private int order;  // to maintain arrival order
+    private int order;  
     private static int counter = 0;
 
     public Patient(String name, int severity) {
@@ -21,8 +19,6 @@ class Patient implements Comparable<Patient> {
     public int getSeverity() {
         return severity;
     }
-
-    // Compare by severity first, then by arrival order
     @Override
     public int compareTo(Patient other) {
         if (this.severity != other.severity) {
@@ -42,8 +38,6 @@ class Patient implements Comparable<Patient> {
         return name + " (" + level + ")";
     }
 }
-
-// Hospital Queue System
 public class HospitalQueue {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -57,7 +51,7 @@ public class HospitalQueue {
             System.out.println("4. Exit");
             System.out.print("Enter choice: ");
             int choice = sc.nextInt();
-            sc.nextLine();  // consume newline
+            sc.nextLine(); 
 
             switch (choice) {
                 case 1 -> {
@@ -97,4 +91,5 @@ public class HospitalQueue {
             }
         }
     }
+
 }
